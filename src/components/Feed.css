@@ -10,17 +10,18 @@
     display: none;
 }
 
-/* Hide for IE, Edge and Firefox */
+/* Hide for IE, Edge and Firefox  */
 .feed {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
 }
+
 .feed__header {
     position: sticky;
     top: 0%;
     background-color: white;
     z-index: 100;
-    border: 1px solid var(--twitter-background);
+    border-bottom: 1px solid var(--twitter-background);
     padding: 15px 20px;
 }   
 

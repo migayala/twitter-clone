@@ -2,7 +2,7 @@ import React from 'react'
 import './Sidebar.css'
 import HomeIcon from '@mui/icons-material/Home';
 import TagIcon from '@mui/icons-material/Tag';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import HubIcon from '@mui/icons-material/Hub';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
@@ -15,7 +15,7 @@ import Button from '@mui/material/Button';
 function Sidebar() {
   return (
     <div className="sidebar">
-        <TwitterIcon className="sidebar__twitterIcon"/>
+        <HubIcon className="sidebar__hubIcon"/>
         
         <SidebarOption active Icon={HomeIcon} text="Home"/>
         <SidebarOption Icon={TagIcon} text="Explore"/>
