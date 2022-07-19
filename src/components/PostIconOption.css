@@ -1,0 +1,28 @@
+
+.postIconOption {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.postIconOption:hover{
+    color: red;
+}
+.postIconOption__icon {
+    padding: 4px;
+}
+
+.postIconOption__icon:hover{
+    color: red;
+    background-color: lightpink;
+    border-radius: 50%;
+    
+}
+
+.postIconOption > span {
+    font-size: 10px;
+    margin-left: 4px;
+}
+.postIconOption > .MuiSvgIcon-root{
+    font-size: medium;
+}

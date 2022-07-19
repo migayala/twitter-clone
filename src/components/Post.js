@@ -2,16 +2,14 @@ import "./Post.css";
 import Miguel from './images/miguel.jpg';
 import Avatar from '@mui/material/Avatar';
 import VerifiedIcon from '@mui/icons-material/Verified';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import RepeatIcon from '@mui/icons-material/Repeat';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import PublishIcon from '@mui/icons-material/Publish';
-import React, {forwardRef,useState} from "react";
+import React, {forwardRef,} from "react";
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import axios from 'axios';
+import PostIcons from "./PostIcons";
+
 
 const options = [
     'Delete'
@@ -19,7 +17,7 @@ const options = [
 const ITEM_HEIGHT = 48;
 
 const Post = forwardRef (({ id, displayName, username, verified, text, image, avatar}, ref) => {
-    const [newPost, setNewPost] = useState("");
+    
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -30,17 +28,16 @@ const Post = forwardRef (({ id, displayName, username, verified, text, image, av
     setAnchorEl(null);
     };
     
-
     const deletePost = (_id) => {
         axios.delete(`http://localhost:8000/api/posts/${id}`)
         .then((res) => {
             console.log(res);
             console.log(res.data);
+
         })
         .catch((err) => {
             console.log(err);
         });
-        setNewPost("");
     }
 
 return (
@@ -84,7 +81,7 @@ return (
                             }}
                         >
                             {options.map((option) => (
-                            <MenuItem key={option} selected={option === 'Delete'} onClick={() => {deletePost();handleClose();newPost();}}>
+                            <MenuItem key={option} selected={option === 'Delete'} onClick={() => {deletePost();handleClose()}}>
                                 {option}
                             </MenuItem>
                             ))}
@@ -100,10 +97,7 @@ return (
             alt="" 
             />
             <div className="post__footer">
-                <ChatBubbleOutlineIcon fontSize="small" />
-                <RepeatIcon fontSize="small" />
-                <FavoriteBorderIcon fontSize="small" />
-                <PublishIcon fontSize="small"/>
+                <PostIcons />
             </div>
         </div>
     </div>

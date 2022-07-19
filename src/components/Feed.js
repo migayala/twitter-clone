@@ -18,7 +18,7 @@ const Feed = () => {
           .catch((err) => {
           console.log(err.response);
           });
-  }, []);
+  },[]);
 
   return (
     <div className="feed">
@@ -31,7 +31,7 @@ const Feed = () => {
         <FlipMove>
         {posts.map((posts, index) => (
           <Post 
-          key={posts.text}
+          key={index}
           displayName = {posts.displayName}
           username={posts.username}
           verified={posts.verified}

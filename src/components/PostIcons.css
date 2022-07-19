@@ -1,0 +1,9 @@
+.postIcons{
+    display: flex;
+    justify-content: space-between;
+    flex: 1.0;
+}
+
+.postIcons > PostIconOption {
+    size: 50px;
+}

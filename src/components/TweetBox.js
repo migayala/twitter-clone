@@ -12,7 +12,7 @@ const TweetBox = () => {
   
 
     const sendTweet = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         const newpost = {displayName: 'Miguel Ayala', username: 'miguelayala', verified: 'true', text: tweetMessage, image: tweetImage, avatar: Miguel};
         axios.post("http://localhost:8000/api/posts", newpost)
             .then(res =>{
